@@ -1,0 +1,30 @@
+{
+  "name": "pwa-complete-guide",
+  "version": "1.0.0",
+  "description": "A complete guide to PWAs. Building a simple Instagram clone.",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -c-1",
+    "minify": "uglifyjs public/src/js/app.js -o public/src/js/app.min.js --compress --mangle && uglifyjs public/src/js/feed.js -o public/src/js/feed.min.js --compress --mangle",
+    "generate-sw": "workbox inject:manifest", 
+    "build": "npm run minify && npm run generate-sw"
+  },
+  "keywords": [
+    "pwa",
+    "progressive",
+    "web",
+    "app",
+    "complete",
+    "tutorial"
+  ],
+  "author": "Maximilian Schwarzmüller",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.11.1",
+    "uglify": "^0.1.5",
+    "workbox-cli": "^2.1.3"
+  },
+  "dependencies": {
+    "firebase-functions": "^2.0.2"
+  }
+}
